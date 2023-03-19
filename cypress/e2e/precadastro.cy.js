@@ -2,7 +2,7 @@
 var faker = require('@faker-js/faker');
 
 beforeEach(() => {
-  cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+  cy.visit('minha-conta/')
 });
 
 describe('Funcionalidade de pre cadastro', () => {
