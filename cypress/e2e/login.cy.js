@@ -39,7 +39,7 @@ describe('Funcionalidade de login', () => {
     cy.get('.woocommerce-form > .button').click()
   });
 
-  it.only('Deve fazer login com sucesso - Usando fixture', () => {
+  it('Deve fazer login com sucesso - Usando fixture', () => {
     //Tudo o que carregar do perfil será armazenado na variável dados abaixo.
     cy.fixture('perfil').then(dados =>{
     cy.get('#username').type(dados.usuario)

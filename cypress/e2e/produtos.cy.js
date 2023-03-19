@@ -18,4 +18,11 @@ describe('Adicao de um produto ao carrinho', () => {
     cy.get('.dropdown-toggle > .mini-cart-items').should('contain',quantidade)
     cy.get('.woocommerce-message').should('contain', quantidade +' × “Taurus Elements Shell” foram adicionados no seu carrinho.')
   })
+
+  it.only('Deve adicionar produtos ao carrinho - Usando Comando customizado', () => {
+    cy.addProdutos('Taurus Elements Shell','M','Yellow',2)
+  });
+  it('Deve adicionar produtos ao carrinho - Usando Comando customizado', () => {
+    cy.addProdutos('Supernova Sport Pant','36','Black',3)
+  });
 })
