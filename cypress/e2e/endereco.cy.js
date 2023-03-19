@@ -1,4 +1,5 @@
 ///<reference types="cypress"/>
+import enderecoPage from "../support/page-objects/endereco.page";
 
 beforeEach(() => {
     cy.visit('minha-conta')
@@ -8,9 +9,9 @@ beforeEach(() => {
 });
 
 describe('Funcionalidade Enderecos - Faturamento e Entrega', () => {
-    it('Deve realizar o cadastro do faturamento com sucesso', () => {
+    it.only('Deve realizar o cadastro do faturamento com sucesso', () => {
     //cadastro de endereco
-    cy.get('.woocommerce-MyAccount-navigation-link--edit-address > a')
-
+        enderecoPage.editarEnderecoFaturamento('Luan','Moraes','EBAC','Brasil','Av.Brasil','3100','São Paulo','São Paulo','02001000','30024000','luan@teste.com')
+        cy.get('.woocommerce-message').should('contain','Endereço alterado com sucesso.')
     });
 });
